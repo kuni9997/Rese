@@ -5,10 +5,7 @@ volumes:
   maildir: {}
 
 services:
-  app:
-    build:
-      context: .
-      :
+
   nginx:
     image: nginx:1.21.1
     ports:
@@ -52,7 +49,7 @@ services:
 
   mail:
     image: mailhog/mailhog
-    container_name: mailhog
+    container_name: mailhog2
     ports:
       - '8025:8025'
     environment:
