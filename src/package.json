@@ -16,6 +16,7 @@
         "vite": "^4.3.9"
     },
     "dependencies": {
-        "@heroicons/vue": "^2.0.18"
+        "@heroicons/vue": "^2.0.18",
+        "flowbite": "^1.8.1"
     }
 }

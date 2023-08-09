@@ -1,0 +1,14 @@
+table {
+    border-collapse: separate;
+    border-spacing: 0.5rem;
+}
+
+.title {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: bold;
+}
+
+td input{
+    width:80%;
+}

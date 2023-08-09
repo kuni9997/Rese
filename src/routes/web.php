@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ShopController;
@@ -34,7 +36,12 @@ ROute::get('/register/thanks', function () {
 })->middleware(['auth', 'verified']);
 
 Route::get('/', [ShopController::class, 'index']);
-Route::get('/detail/{shop_id}', [ShopController::class, 'detail']);
+Route::get('/detail/{shop_id}', [ShopController::class, 'detail'])->name('detail');
 
 Route::post('/search', [SearchController::class, 'search']);
 Route::post('/favorite', [FavoriteController::class, 'create']);
+Route::post('/booking/add', [BookingController::class, 'add'])->middleware(['auth', 'verified']);
+Route::post('/booking/delete', [BookingController::class, 'delete'])->middleware(['auth', 'verified']);
+Route::post('/booking/change', [BookingController::class, 'change'])->middleware(['auth', 'verified']);
+Route::post('/booking/review', [BookingController::class, 'review'])->middleware(['auth', 'verified']);
+Route::get('/mypage', [MypageController::class, 'index'])->middleware(['auth', 'verified']);

@@ -13,4 +13,8 @@ class Favorite extends Model
         'user_id',
         'shop_id'
     ];
+
+    public function shop(){
+        return $this->belongsTo('App\Models\Shop');
+    }
 }

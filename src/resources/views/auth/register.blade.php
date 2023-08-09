@@ -26,8 +26,8 @@
                 <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
             </svg>
             <x-text-input placeholder="Email" id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
+        <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
         <!-- Password -->
         <div class="mt-4 flex justify-center items-center">
@@ -39,9 +39,8 @@
                             type="password"
                             name="password"
                             required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
+        <x-input-error :messages="$errors->get('password')" class="mt-2" />
 
 
         <div class="flex items-center justify-end mt-4">

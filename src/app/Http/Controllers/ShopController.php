@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Favorite;
 use App\Models\Shop;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
@@ -12,15 +13,13 @@ class ShopController extends Controller
         $areas = Shop::select('area')->distinct()->get();
         $genres = Shop::select('genre')->distinct()->get();
         $shops = Shop::all();
+        $favorites = Favorite::where('user_id', Auth::id())->get();
 
-        // dd($area);
-
-        return view('home',compact('areas','genres','shops'));
+        return view('home',compact('areas','genres','shops','favorites'));
     }
 
     public function detail($shop_id) {
         $shop_detail = Shop::where('id', $shop_id)->first();
-        
         return view('shopDetail', compact('shop_detail','shop_id'));
     }
 

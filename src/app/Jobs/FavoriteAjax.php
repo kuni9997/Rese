@@ -12,6 +12,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpKernel\DataCollector\AjaxDataCollector;
 
 class FavoriteAjax implements ShouldQueue
 {
@@ -53,4 +54,12 @@ class FavoriteAjax implements ShouldQueue
 
         Log::info("完了");
     }
+
+    // Ajax使うときのcontroller用
+    // use App\Jobs\FavoriteAjax;
+    // use App\Libs\FavoriteParam;
+        // $param = new FavoriteParam();
+        // $param->user_param = $user_id;
+        // $param->shop_param = $shop_id;
+        // FavoriteAjax::dispatch($param);
 }
