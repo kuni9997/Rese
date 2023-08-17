@@ -6,6 +6,7 @@ use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ManagerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,7 +32,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-ROute::get('/register/thanks', function () {
+Route::get('/register/thanks', function () {
     return view('registerThanks');
 })->middleware(['auth', 'verified']);
 
@@ -45,3 +46,7 @@ Route::post('/booking/delete', [BookingController::class, 'delete'])->middleware
 Route::post('/booking/change', [BookingController::class, 'change'])->middleware(['auth', 'verified']);
 Route::post('/booking/review', [BookingController::class, 'review'])->middleware(['auth', 'verified']);
 Route::get('/mypage', [MypageController::class, 'index'])->middleware(['auth', 'verified']);
+
+Route::get('/manager', [ManagerController::class, 'index'])->middleware(['auth', 'verified']);
+Route::post('/manager',[ManagerController::class, 'store'])->middleware(['auth', 'verified']);
+Route::get('/shop', [ManagerController::class, 'shopIndex'])->middleware(['auth', 'verified']);

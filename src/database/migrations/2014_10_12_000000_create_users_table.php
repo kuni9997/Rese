@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('role')->comment('1:管理者,2:店舗代表者,3:利用者');
             $table->rememberToken();
             $table->timestamps();
         });

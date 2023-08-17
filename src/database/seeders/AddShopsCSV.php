@@ -33,7 +33,8 @@ class AddShopsCSV extends Seeder
                 'area' => $row[1],
                 'genre' => $row[2],
                 'shop_desc' => $row[3],
-                'pic_url' => $row[4]
+                'pic_url' => $row[4],
+                'registered_id' => $row[5]
             ]);
         });
 

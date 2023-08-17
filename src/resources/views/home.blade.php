@@ -3,7 +3,7 @@
         <link rel="stylesheet" href="{{ asset('css/home.css') }}">
         <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     @endsection
-
+    
         <div class="content flex flex-col items-center">
         <form action="/search" method="post">
         @csrf

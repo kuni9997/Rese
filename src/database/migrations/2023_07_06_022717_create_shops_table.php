@@ -14,6 +14,9 @@ return new class extends Migration {
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('registered_id')->comment('users');
+            $table->foreign('registered_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
+
             $table->string('shop_name');
             $table->string('area');
             $table->string('genre');
