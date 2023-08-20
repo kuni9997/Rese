@@ -1,0 +1,21 @@
+table {
+    table-layout: fixed;
+    width:100%;
+    margin-top: 2rem;
+}
+
+.title {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: bold;
+}
+
+table tr{
+    border-bottom: 2px #000000 solid;
+}
+
+table td{
+    text-align: center;
+    vertical-align: middle;
+    padding: 1rem 0 1rem;
+}

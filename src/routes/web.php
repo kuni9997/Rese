@@ -45,8 +45,13 @@ Route::post('/booking/add', [BookingController::class, 'add'])->middleware(['aut
 Route::post('/booking/delete', [BookingController::class, 'delete'])->middleware(['auth', 'verified']);
 Route::post('/booking/change', [BookingController::class, 'change'])->middleware(['auth', 'verified']);
 Route::post('/booking/review', [BookingController::class, 'review'])->middleware(['auth', 'verified']);
+Route::get('/booking/manager', [BookingController::class, 'manager'])->middleware(['auth', 'verified']);
+Route::get('/booking/manager/detail/{booking_id}', [BookingController::class, 'detail'])->middleware(['auth', 'verified']);
 Route::get('/mypage', [MypageController::class, 'index'])->middleware(['auth', 'verified']);
 
 Route::get('/manager', [ManagerController::class, 'index'])->middleware(['auth', 'verified']);
 Route::post('/manager',[ManagerController::class, 'store'])->middleware(['auth', 'verified']);
 Route::get('/shop', [ManagerController::class, 'shopIndex'])->middleware(['auth', 'verified']);
+Route::post('/shop/register', [ManagerController::class, 'shopRegister'])->middleware(['auth', 'verified']);
+Route::get('/shop/update/{shop_id}',[ManagerController::class, 'update_index'])->middleware(['auth', 'verified']);
+Route::post('/shop/update/{shop_id}', [ManagerController::class, 'update'])->middleware(['auth', 'verified']);

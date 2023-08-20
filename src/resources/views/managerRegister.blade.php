@@ -50,11 +50,11 @@
         </div>
     </form>
     <div class="account-list">
-        @foreach($representives as $representive)
+        @foreach($representatives as $representative)
         <table class="account-list__table">
             <tr>
-                <td>{{ $representive->name }}</td>
-                <td>{{ $representive->email }}</td>
+                <td>{{ $representative->name }}</td>
+                <td>{{ $representative->email }}</td>
             </tr>
         @endforeach
         </table>

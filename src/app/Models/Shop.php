@@ -10,6 +10,7 @@ class Shop extends Model
     use HasFactory;
 
     protected $fillable = [
+        'registered_id',
         'shop_name',
         'area',
         'genre',
@@ -36,5 +37,9 @@ class Shop extends Model
         if ($shop_name){
             $query->where('shop_name', 'like', "%$shop_name%");
         }
+    }
+
+    public function Reservation(){
+        return $this->hasMany(Reservation::class);
     }
 }
