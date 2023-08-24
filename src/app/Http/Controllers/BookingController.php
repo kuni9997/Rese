@@ -9,6 +9,7 @@ use App\Models\Review;
 use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\BookingRequest;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class BookingController extends Controller
 {
@@ -88,5 +89,10 @@ class BookingController extends Controller
         $booking = Reservation::where('id', $booking_id)->with('user', 'shop')->first();
 
         return view('bookingDetail', compact('booking'));
+    }
+
+    public function qrCode(Request $request){
+        $url='http://localhost/booking/manager/detail/' . $request->id;
+        return QrCode::size(100)->generate($url);
     }
 }

@@ -16,9 +16,9 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     </head>
-    <body class="font-sans text-gray-900 antialiased">
+    <body class="font-sans text-gray-900 antialiased h-screen bg-gray-100">
         @include('layouts.header')
-            <div class="content-main  bg-gray-100 ">
+            <div class="content-main">
                     <div class="w-full flex flex-col sm:justify-center items-center pt-24">
                     @yield('Add_item')
                     <div class="w-full sm:max-w-md mt-0 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-b-lg">
