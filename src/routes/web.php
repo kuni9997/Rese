@@ -63,5 +63,6 @@ Route::middleware('auth','verified')->group(function (){
     
     Route::post('/booking/review', [BookingController::class, 'review']);
 
+    Route::get('/mail/index', [MailSendController::class, 'index']);
     Route::get('/mail',[MailSendController::class, 'send']);
 });

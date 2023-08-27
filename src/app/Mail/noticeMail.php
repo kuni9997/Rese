@@ -19,9 +19,12 @@ class noticeMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
-    {
 
+    public $name,$text;
+    public function __construct($name,$text)
+    {
+        $this->name = $name;
+        $this->text = $text;
     }
 
     /**

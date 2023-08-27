@@ -5,32 +5,28 @@
     </div>
     @endsection
 
-    <form method="POST" action="/mail">
+    <form method="get" action="/mail">
         @csrf
         <!-- Email Address -->
-        <div class="mt-4 flex justify-center items-center">
-            <select name="send-to" id="send-to" type="text">
+        <div class="mt-4 flex items-center">
+            <label class="mr-8" for="sendTo">送信先</label>
+            <select name="sendTo" id="sendTo" type="text">
                 <option value="" selected hidden>選択してください</option>
                 <option value="user">利用者全員</option>
-                <option value="user-shop">店舗利用者</option>
             </select>
         </div>
-        @error('send-to')
-        <x-input-error :messages="{{$message}}" class="mt-2" />
+        @error('sendTo')
+            <p class='text-sm text-red-600 space-y-1'>{{$message}}</p>
         @enderror
 
         <!-- Password -->
-        <div class="mt-4 flex justify-center items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 mr-4">
-                <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clip-rule="evenodd" />
-            </svg>
-
-            <x-text-input placeholder="Password" id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+        <div class="mt-4 flex  items-center">
+            <label class="w-max whitespace-nowrap mr-4" for="text">メール本文</label>
+            <textarea name="text" id="text" cols="40" rows="8"></textarea>
         </div>
-        <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        @error('text')
+            <p class='text-sm text-red-600 space-y-1'>{{$message}}</p>
+        @enderror
 
 
         <div class="flex items-center justify-end mt-4">
