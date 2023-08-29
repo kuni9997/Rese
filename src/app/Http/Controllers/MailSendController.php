@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Mail\noticeMail;
 use App\Models\user;
+use App\Mail\noticeMail;
 use Illuminate\Support\Facades\Mail;
 
 
