@@ -27,8 +27,10 @@ RUN apt-get update \
   && : 'Install PHP Extensions' \
   && docker-php-ext-install -j$(nproc) pdo_pgsql 
 
+RUN apt-get update && apt-get install -y cron
+RUN apt-get install -y vim
+
 ENV COMPOSER_ALLOW_SUPERUSER 1
 COPY --from=composer /usr/bin/composer /usr/bin/composer
-
 
 WORKDIR /var/www/

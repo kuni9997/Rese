@@ -30,7 +30,7 @@ class ScheduledMailCommand extends Command
      * @return int
      */
     public function handle()
-    {   
+    {
         $target_date = Carbon::now()->addDay()->format('Y-m-d');
         $send_users = Reservation::with('user')->whereDate('reservation_time',$target_date)->get();
         $myPageUrl = url('/mypage');

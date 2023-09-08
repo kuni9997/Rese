@@ -48,4 +48,9 @@ MAIL_ENCRYPTION=null
 MAIL_FROM_ADDRESS="hello@example.com"
 MAIL_FROM_NAME="${APP_NAME}"
 
+cronタブ設定（タスクスケジューラー起動用）
+docker-compose exec php bash
+crontab -e
+vimのインサートモードで下記をペースト
+* */1 * * * php artisan schedule:run
 

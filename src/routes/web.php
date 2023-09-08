@@ -3,6 +3,7 @@
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ShopController;
@@ -65,4 +66,13 @@ Route::middleware('auth','verified')->group(function (){
 
     Route::get('/mail/index', [MailSendController::class, 'index']);
     Route::get('/mail',[MailSendController::class, 'send']);
+
+    // 決済ボタンを表示するページ
+    Route::get('/payment/index', [PaymentsController::class, 'index']);
+
+    // Stripeの処理
+    Route::post('/payment', [PaymentsController::class, 'payment']);
+
+    // 決済完了ページ
+    Route::get('/payment/complete',[PaymentsController::class, 'complete'])->name('complete');
 });
