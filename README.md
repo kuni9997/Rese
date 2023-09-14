@@ -1,7 +1,21 @@
 # Mytemplate
 # Rese
 
-seederで登録　
+・初期セットアップ
+環境構築時に下記コマンドを実行
+
+composer install
+composer update
+npm install
+npm run build
+
+
+・seederで登録　
+下記コマンドを実行
+php artisan db:seed --class AddShopsCSV
+
+管理者の作成はdbに直接登録でのみ可能
+
 管理者ID
 username:master
 email:master@master
@@ -12,13 +26,9 @@ username:master_host
 email:master@masterhost
 password:master1234
 
-初期セットアップ
-composer install
-composer update
-npm install
-npm run build
 
 .envファイル設定
+下記を貼り付けて、stripeのキーを設定してください。
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
@@ -48,7 +58,10 @@ MAIL_ENCRYPTION=null
 MAIL_FROM_ADDRESS="hello@example.com"
 MAIL_FROM_NAME="${APP_NAME}"
 
-cronタブ設定（タスクスケジューラー起動用）
+STRIPE_KEY=stripeのキーを設定
+STRIPE_SECRET=stripeのキーを設定
+
+・cronタブ設定（タスクスケジューラー起動用）
 docker-compose exec php bash
 crontab -e
 vimのインサートモードで下記をペースト
