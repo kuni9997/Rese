@@ -68,6 +68,7 @@ password:master1234
 
 .envファイル設定
 下記を貼り付けて、stripeのキーを設定してください。
+
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
