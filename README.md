@@ -35,6 +35,7 @@ stripe （決済機能）
 ## テーブル設計
 
 ##ER図
+https://github.com/kuni9997/Rese/issues/3#issue-1896594532
 
 ##環境構築
 
