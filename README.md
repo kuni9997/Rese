@@ -65,6 +65,9 @@ username:master_host
 email:master@masterhost
 password:master1234
 
+下記コマンドを実行
+php artisan db:seed --class AddShopsCSV
+
 
 .envファイル設定
 下記を貼り付けて、stripeのキーを設定してください。
