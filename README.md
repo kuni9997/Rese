@@ -47,6 +47,7 @@ composer install
 composer update
 npm install
 npm run build
+php artisan storage:link
 
 
 ・seederで登録　
