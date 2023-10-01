@@ -48,7 +48,7 @@
                         </table>
                         @if(strtotime(date("Y-m-d H:i",strtotime($booking->reservation_time))) <= strtotime(date("Y-m-d H:i")) )
                         <div class="content__item-book__review w-full flex justify-around justify-items-center mb-4">
-                            @for($i=1; $i < 6; $i++)
+                            @for($i=1; $i < 5; $i++)
                             <div class="content__item-book__review__item" id="review{{ $i }}-div">
                                 <button onclick="onClick(this.id)" id="review{{ $i }}" class="content__item-book__review__item--color" type="button">
                                     <svg xm lns="http://www.w3.org/000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">

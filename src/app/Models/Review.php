@@ -9,10 +9,15 @@ class Review extends Model
 {
     use HasFactory;
 
-    protected $table = 'review';
+    protected $table = 'reviews';
     protected $fillable = [
         'user_id',
         'shop_id',
-        'review'
+        'review',
         ];
+    
+    public function reviewPost(){
+
+        return $this->hasOne('App\Models\ReviewPost');
+    }
 }

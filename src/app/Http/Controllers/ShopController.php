@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Favorite;
 use App\Models\Shop;
+use App\Models\User;
+use App\Models\Review;
 use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
@@ -20,7 +22,13 @@ class ShopController extends Controller
 
     public function detail($shop_id) {
         $shop_detail = Shop::where('id', $shop_id)->first();
-        return view('shopDetail', compact('shop_detail','shop_id'));
+        $user = User::where('id', Auth::id())->first();
+        $reviews = Review::with('reviewPost')->where('shop_id',$shop_id)->get();
+        $reviewExists = Review::where('shop_id', $shop_id)->where('user_id', Auth::id())->doesntExist();
+
+        dd($shop_id);
+
+        return view('shopDetail', compact('shop_detail','shop_id','user','reviews','reviewExists'));
     }
 
 }

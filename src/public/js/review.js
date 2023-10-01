@@ -13,3 +13,4 @@ function onClick(id) {
         console.log(inputObj.value)
     }
 }
+

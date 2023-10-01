@@ -1,0 +1,39 @@
+.card {
+    border-right:5px solid rgb(194, 193, 193);
+}
+
+textarea {
+    width: 100%;
+}
+
+label {
+    display: inline-block;
+    color: #AAAAAA;
+    background-color: white;
+    padding: 10px;
+    border: double 4px #AAAAAA;
+    width: 50%;
+    height: 5rem;
+}
+
+.review__pic__content__image {
+    display: none;
+}
+
+.review__pic__upload-box {
+    background-color: #fff;
+    width: 70%;
+    height: 5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.review__pic__content__preview-box {
+        margin-top: 1rem;
+        width: 30%;
+        height: 5rem;
+}
+
+.yellow {
+    color: #FFD700;
+}

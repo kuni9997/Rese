@@ -75,12 +75,6 @@ class BookingController extends Controller
     {
         $shops = Shop::where('registered_id', Auth::id())->has('Reservation')->with('Reservation')->get();
 
-        // foreach($reservations as $reservation){
-        //     foreach($reservation->Reservation as $reserve){
-        //         dd($reserve->shop_id);
-        //     }
-        // }
-
         return view('bookingList', compact('shops'));
     }
 

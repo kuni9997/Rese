@@ -5,11 +5,23 @@
     @endsection
     
         <div class="content flex flex-col items-center">
-        <form action="/search" method="post">
-        @csrf
+            <div class="search-form sm:flex justify-center items-center mt-2">
+            <form action="/sort" method="get" name="sort">
+            @csrf
+                <div class="search-form_  sm:max-w-md mt-0 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-l-lg">
+                    <select class="border-none cursor-pointer" name="form_sort" id="form_sort" onchange="sortButton()">
+                    <option value="">並び替え</option>
+                    <option value="rand">ランダム</option>
+                    <option value="high">評価の高い順</option>
+                    <option value="low">評価の低い順</option>
+                    </select>
+                </div>
+            </form>
+            <form action="/search" method="post" id="form-button" name="form-button">
+            @csrf
             <div class="search-form sm:flex justify-center items-center mt-2">
                 <div class="search-form--sm flex justify-center items-center">
-                    <div class="search-form_area  sm:max-w-md mt-0 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-l-lg">
+                    <div class="search-form_area  sm:max-w-md mt-0 px-6 py-4 bg-white shadow-md overflow-hidden">
                         <select class="border-none cursor-pointer" name="form_area" id="form_area">
                             <option value="">All area</option>
                             @foreach($areas as $area)
@@ -36,6 +48,7 @@
                 </div>
             </div>
         </form>
+        </div>
         <div class="shop sm:w-3/4 grid auto-rows-auto xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-x-2 gap-y-4 mt-6 ">
             @foreach($shops as $shop)
             <form action="/detail/{{ $shop->id }}" method="get">
@@ -81,4 +94,5 @@
             @endforeach
         </div>
     </div>
+    <script src="{{ asset('/js/home.js') }}"></script>
 </x-app-layout>

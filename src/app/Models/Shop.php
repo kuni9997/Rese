@@ -42,4 +42,8 @@ class Shop extends Model
     public function Reservation(){
         return $this->hasMany(Reservation::class);
     }
+
+    public function review(){
+        return $this->hasMany('App\Models\Review');
+    }
 }

@@ -5,10 +5,12 @@ use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewPostController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\MailSendController;
+use App\Http\Controllers\SortController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +36,9 @@ require __DIR__.'/auth.php';
 
 Route::get('/', [ShopController::class, 'index']);
 Route::get('/detail/{shop_id}', [ShopController::class, 'detail'])->name('detail');
+
+//並び変え機能
+Route::get('/sort', [SortController::class, 'sort']);
 
 Route::middleware('auth','verified')->group(function (){
     Route::get('/register/thanks', function () {
@@ -75,4 +80,11 @@ Route::middleware('auth','verified')->group(function (){
 
     // 決済完了ページ
     Route::get('/payment/complete',[PaymentsController::class, 'complete'])->name('complete');
+
+    //レビューページ
+    Route::get('/review', [ReviewPostController::class, 'index']);
+    Route::post('/review', [ReviewPostController::class, 'addReview']);
+    Route::post('/review/update', [ReviewPostController::class, 'updateReview']);
+    Route::get('/review/delete', [ReviewPostController::class, 'deleteReview']);
+
 });
