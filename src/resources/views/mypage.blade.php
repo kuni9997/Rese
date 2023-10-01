@@ -61,6 +61,7 @@
                             <button type="submit" formaction="/booking/review" class="content__item-book__review__item--button bg-yellow-600 md:rounded p-1">評価する</button>
                         </div>
                         @endif
+                        <button type="submit" formaction="/payment/index" formmethod="get" class="content__item-book__button w-full bg-green-700 mb-0 p-4">事前決済をする</button>
                         <button type="submit" formaction="/booking/change" class="content__item-book__button w-full bg-blue-700 mb-0 p-4">予約を変更する</button>
                         <button type="submit" formaction="/booking/qrCode" class="content__item-book__button__qr-code w-full bg-red-500 mb-0 p-4 md:rounded-b-lg">QRコード表示</button>
                     </div>
